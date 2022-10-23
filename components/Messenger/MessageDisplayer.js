@@ -13,15 +13,15 @@ export default MessageDisplayer
 
 const styles = StyleSheet.create({
   messagePop: {
-    backgroundColor: "green",
-    color: "black",
+    backgroundColor: "black",
+    color: "white",
     position: "absolute",
     bottom: "27%",
-    right: "5%",
+    right: 10,
     fontSize: 18,
     padding: 10,
     borderRadius: 20,
-    borderColor: "black",
+    borderColor: "white",
     borderWidth: 2,
     textAlign: "center",
   },

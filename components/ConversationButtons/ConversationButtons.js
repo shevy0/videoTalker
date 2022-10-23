@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { hangUp } from "../../utils/webRTC/webRTCHandler";
+import Messenger from "../Messenger/Messenger";
 
 const ConversationButtons = (props) => {
   const {
@@ -67,7 +68,7 @@ export default ConversationButtons;
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
-    marginTop: 10,
+    marginBottom: 5,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 50,
-    margin: 10,
+    marginRight: 5,
   },
   rejectIcon: {
     backgroundColor: "grey",
@@ -87,6 +88,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 50,
-    margin: 10,
+    marginLeft: 5,
   },
 });

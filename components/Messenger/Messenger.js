@@ -54,13 +54,13 @@ export default Messenger;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    width: "50%",
+    width: "40%",
   },
   input: {
     backgroundColor: "white",
     paddingHorizontal: 15,
-    paddingVertical: 10,
-    fontSize: 18,
+    paddingVertical: 5,
+    fontSize: 14,
     borderRadius: 10,
   },
   row: {

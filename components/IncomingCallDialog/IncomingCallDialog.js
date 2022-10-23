@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import { connect } from 'react-redux';
 import { acceptIncomingCallRequest, rejectIncomingCallRequest, resetCallData } from '../../utils/webRTC/webRTCHandler';
 import { useNavigation } from '@react-navigation/native';
@@ -22,7 +21,7 @@ const handleRejectButtonPressed = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={{color: "white"}}>{callerUsername}</Text>
+      <Text style={{color: "white"}}>{callerUsername} dzwoni...</Text>
         <View style={styles.row}>
             {/* Image */}
             <TouchableOpacity

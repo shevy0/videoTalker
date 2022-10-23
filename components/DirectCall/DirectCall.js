@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  SafeAreaView
+} from "react-native";
 import React from "react";
 import LocalVideoView from "../LocalVideoView/LocalVideoView";
 import RemoteVideoView from "../RemoteVideoView/RemoteVideoView";
@@ -35,32 +42,29 @@ const DirectCall = (props) => {
       {callState === callStates.CALL_AVAILABLE &&
         !callRejected.rejected &&
         navigation.replace("Home")}
-      <KeyboardAvoidingView style={styles.videoContainer}>
-        <View style={[styles.videos, styles.localVideos]}>
+      {callingDialogVisible && <CallingDialog />}
+      {callRejected.rejected && (
+        <CallRejectedDialog
+          reason={callRejected.reason}
+          hideCallRejectedDialog={hideCallRejectedDialog}
+        />
+      )}
+      {remoteStream && localStream && (
+        <SafeAreaView style={styles.videoContainer}>
+          <RemoteVideoView remoteStream={remoteStream} />
           <LocalVideoView localStream={localStream} />
-        </View>
-        <View style={[styles.videos, styles.remoteVideos]}>
+
           {remoteStream && callState === callStates.CALL_IN_PROGRESS && (
-            <RemoteVideoView remoteStream={remoteStream} />
-          )}
-          {callingDialogVisible && <CallingDialog />}
-          {callRejected.rejected && (
-            <CallRejectedDialog
-              reason={callRejected.reason}
-              hideCallRejectedDialog={hideCallRejectedDialog}
+            <Messenger
+              message={message}
+              setDirectCallMessage={setDirectCallMessage}
             />
           )}
-        </View>
-        {remoteStream && callState === callStates.CALL_IN_PROGRESS && (
-          <Messenger
-            message={message}
-            setDirectCallMessage={setDirectCallMessage}
-          />
-        )}
-        {remoteStream && callState === callStates.CALL_IN_PROGRESS && (
-          <ConversationButtons {...props} />
-        )}
-      </KeyboardAvoidingView>
+          {remoteStream && callState === callStates.CALL_IN_PROGRESS && (
+            <ConversationButtons {...props} />
+          )}
+        </SafeAreaView>
+      )}
     </>
   );
 };
@@ -88,20 +92,7 @@ export default connect(mapStoreStateToProps, mapDispatchToProps)(DirectCall);
 const styles = StyleSheet.create({
   videoContainer: {
     flex: 1,
-    minHeight: 450,
-  },
-  videos: {
-    width: "100%",
-    flex: 1,
-    position: "relative",
-    overflow: "hidden",
-    borderRadius: 6,
-  },
-  localVideos: {
-    height: 100,
-    marginBottom: 10,
-  },
-  remoteVideos: {
-    height: 400,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
 });

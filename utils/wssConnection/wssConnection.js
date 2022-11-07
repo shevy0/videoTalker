@@ -3,7 +3,7 @@ import store from "../../store/store";
 import * as dashboardActions from "../../store/actions/dashboardActions";
 import * as webRTCHandler from "../webRTC/webRTCHandler";
 
-const SERVER = "https://98f2-79-186-179-119.eu.ngrok.io";
+const SERVER = "https://server-videotalker.herokuapp.com/";
 
 const broadcastEventTypes = {
   ACTIVE_USERS: "ACTIVE_USERS",

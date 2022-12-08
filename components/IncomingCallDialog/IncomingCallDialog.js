@@ -17,11 +17,12 @@ const handleAcceptButtonPressed = () => {
 
 const handleRejectButtonPressed = () => {
     rejectIncomingCallRequest();
+    //navigation.replace("Home");
 }
 
   return (
     <View style={styles.container}>
-      <Text style={{color: "white"}}>{callerUsername} dzwoni...</Text>
+      <Text style={{color: "black"}}>{callerUsername} dzwoni...</Text>
         <View style={styles.row}>
             {/* Image */}
             <TouchableOpacity

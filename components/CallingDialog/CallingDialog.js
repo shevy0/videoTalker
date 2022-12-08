@@ -11,7 +11,7 @@ const CallingDialog = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={{ color: "white" }}>Nawiązuję połączenie...</Text>
+      <Text style={{ color: "black" }}>Nawiązuję połączenie...</Text>
       <View style={styles.row}>
         <TouchableOpacity onPress={handleHangUpButtonPressed}>
           <View style={styles.acceptIcon}>

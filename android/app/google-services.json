@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1036881710767",
+    "firebase_url": "https://videotalker-5c404-default-rtdb.firebaseio.com",
+    "project_id": "videotalker-5c404",
+    "storage_bucket": "videotalker-5c404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036881710767:android:1df2ffcc8422190f70ce5a",
+        "android_client_info": {
+          "package_name": "com.videotalker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036881710767-g770916ibjsick9tt7a1eubsanhtg45m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV4Bc9tkL5FvZCy_ft-DEBrG24R0yMaYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036881710767-g770916ibjsick9tt7a1eubsanhtg45m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

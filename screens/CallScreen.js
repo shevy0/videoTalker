@@ -16,7 +16,7 @@ export default CallScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#1c1c1c",
+    backgroundColor: "white",
     padding: 15,
   },
 });

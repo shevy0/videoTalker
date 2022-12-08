@@ -14,13 +14,13 @@ const CallRejectedDialog = ({ reason, hideCallRejectedDialog }) => {
         rejected: false,
         reason: ''
       });
-      navigation.replace("Home");
+      navigation.goBack();
     }, 500);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={{color: "white"}}>{reason}</Text>
+      <Text style={{color: "black"}}>{reason}</Text>
     </View>
   )
 }

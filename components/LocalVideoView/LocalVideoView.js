@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     height: 150,
     top: 10,
     left: 10,
-    elevation: 10,
+    elevation: 50,
   },
 });

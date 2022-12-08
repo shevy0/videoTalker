@@ -19,8 +19,9 @@ export default RemoteVideoView;
 
 const styles = StyleSheet.create({
   video: {
-    position: "absolute",
     width: "100%",
     height: "100%",
+    elevation: -1,
+    position: 'absolute',
   },
 });

@@ -50,10 +50,11 @@ export const connectWithSocket = () => {
   });
 };
 
-export const registerNewUser = (username) => {
+export const registerNewUser = (username, userid) => {
   socket.emit("register-new-user", {
     username: username,
     socketId: socket.id,
+    userid: userid,
   });
 };
 

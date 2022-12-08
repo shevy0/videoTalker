@@ -41,7 +41,7 @@ const DirectCall = (props) => {
     <>
       {callState === callStates.CALL_AVAILABLE &&
         !callRejected.rejected &&
-        navigation.replace("Home")}
+        navigation.goBack()}
       {callingDialogVisible && <CallingDialog />}
       {callRejected.rejected && (
         <CallRejectedDialog
@@ -50,7 +50,7 @@ const DirectCall = (props) => {
         />
       )}
       {remoteStream && localStream && (
-        <SafeAreaView style={styles.videoContainer}>
+        <View style={styles.videoContainer}>
           <RemoteVideoView remoteStream={remoteStream} />
           <LocalVideoView localStream={localStream} />
 
@@ -63,7 +63,7 @@ const DirectCall = (props) => {
           {remoteStream && callState === callStates.CALL_IN_PROGRESS && (
             <ConversationButtons {...props} />
           )}
-        </SafeAreaView>
+        </View>
       )}
     </>
   );

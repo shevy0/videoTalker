@@ -19,33 +19,31 @@ const LoginScreen = ({ saveUserName, saveUserID }) => {
 
   const loginUser = async () => {
     try {
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        registerNewUser(auth.currentUser.displayName, auth.currentUser.uid);
-        saveUserName(auth.currentUser.displayName);
-        saveUserID(auth.currentUser.uid);
-      }) 
-      .catch(error => {
-        switch(error.code) {
-          case 'auth/user-not-found':
-            Alert.alert("Wystąpił błąd:", "Nie znaleziono użytkownika.")
-            break;
-          case 'auth/invalid-email':
-            Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
-            break;
-          case 'auth/internal-error':
-            Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
-            break;
-          default:
-            Alert.alert("Wystąpił błąd:", error.message)
-            break;
-        }
-      })
-      
-    } catch(error) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          registerNewUser(auth.currentUser.displayName, auth.currentUser.uid);
+          saveUserName(auth.currentUser.displayName);
+          saveUserID(auth.currentUser.uid);
+        })
+        .catch(error => {
+          switch (error.code) {
+            case 'auth/user-not-found':
+              Alert.alert("Wystąpił błąd:", "Nie znaleziono użytkownika.")
+              break;
+            case 'auth/invalid-email':
+              Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
+              break;
+            case 'auth/internal-error':
+              Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
+              break;
+            default:
+              Alert.alert("Wystąpił błąd:", error.message)
+              break;
+          }
+        })
+    } catch (error) {
       console.log(error.message)
     }
-
   }
 
   return (

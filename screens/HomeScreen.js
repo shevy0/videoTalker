@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import ActiveUsersList from "../components/ActiveUsersList/ActiveUsersList";
 import * as webRTCHandler from "../utils/webRTC/webRTCHandler";
 import { callStates, setCallRejected } from "../store/actions/callActions";
@@ -7,10 +7,12 @@ import { connect } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import IncomingCallDialog from "../components/IncomingCallDialog/IncomingCallDialog";
 import { launchImageLibrary } from "react-native-image-picker";
-import { getAuth, updateProfile, setDoc, collection, db, onSnapshot, query, where } from "../firebase";
+import { getAuth, updateProfile, setDoc, collection, db, onSnapshot, query, where, signOut } from "../firebase";
 import { Image } from "@rneui/base";
 import { doc, getDoc, snapshotEqual } from "firebase/firestore";
 import { ListItem, Avatar } from '@rneui/base';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { disconnect } from "../utils/wssConnection/wssConnection";
 
 const HomeScreen = (props) => {
   const navigation = useNavigation();

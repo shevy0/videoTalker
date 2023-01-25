@@ -39,7 +39,31 @@ function App() {
 
   if (initializing) return null;
 
-  if (!user) {
+  if (user) {
+    return (
+      <Stack.Navigator screenOptions={globalScreenOptions}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="CallScreen"
+          component={CallScreen}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
+        />
+      </Stack.Navigator>
+    )
+  }
+  else {
     return (
       <Stack.Navigator>
         <Stack.Screen
@@ -50,42 +74,15 @@ function App() {
           }}
         />
         <Stack.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={{
-        headerShown: false
-        }}
-      />
+          name="Signup"
+          component={SignupScreen}
+          options={{
+            headerShown: false
+          }}
+        />
       </Stack.Navigator>
     )
   }
-
-  return (
-    <Stack.Navigator screenOptions={globalScreenOptions}>
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-        headerShown: false
-        }}
-      />
-      <Stack.Screen
-        name="CallScreen"
-        component={CallScreen}
-        options={{
-          headerShown: false
-        }}
-      />
-      <Stack.Screen
-        name="AddChatScreen"
-        component={AddChatScreen}
-      />
-      <Stack.Screen
-        name="ChatScreen"
-        component={ChatScreen}
-      />
-    </Stack.Navigator>
-  )
 }
 export default () => {
   return (

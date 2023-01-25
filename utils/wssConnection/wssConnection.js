@@ -57,7 +57,6 @@ export const registerNewUser = (username, userid) => {
     userid: userid,
   });
 };
-
 // events related with direct calls
 
 export const sendPreOffer = (data) => {
@@ -85,14 +84,8 @@ export const sendUserHangedUp = (data) => {
 };
 
 const handleBroadcastEvent = (data) => {
-  switch (data.event) {
-    case broadcastEventTypes.ACTIVE_USERS:
-      const activeUsers = data.activeUsers.filter(
-        (activeUser) => activeUser.socketId !== socket.id
-      );
-      store.dispatch(dashboardActions.setActiveUsers(activeUsers));
-      break;
-    default:
-      break;
-  }
+  const activeUsers = data.activeUsers.filter(
+    (activeUser) => activeUser.socketId !== socket.id
+  );
+  store.dispatch(dashboardActions.setActiveUsers(activeUsers));
 };

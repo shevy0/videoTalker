@@ -17,23 +17,37 @@ const Signup = ({ saveUserName, saveUserID }) => {
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [imageurl, setImageurl] = useState('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png');
+  const auth = getAuth();
 
   const registerUser = async () => {
-    const auth = getAuth()
+    try {
     createUserWithEmailAndPassword(auth, email, password)
       .then((authUser) => {
         const user = authUser.user
-        updateProfile(user, {
-          displayName: firstName,
-          photoURL: imageurl,
-        })
-          .then(() => console.log('Profile updated!'))
-          .catch((error) => alert(error.message))
-        registerNewUser(firstName, authUser.user.uid);
+        updateProfile(user, { displayName: firstName })
+        registerNewUser(firstName);
         saveUserName(firstName);
         saveUserID(authUser.user.uid);
       })
-      .catch((error) => alert(error.message))
+      .catch(error => {
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            Alert.alert("Wystąpił błąd:", "Adres e-mail jest już używany.")
+            break;
+          case 'auth/invalid-email':
+            Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
+            break;
+          case 'auth/internal-error':
+            Alert.alert("Wystąpił błąd:", "Nieprawidłowe dane logowania.")
+            break;
+          default:
+            Alert.alert("Wystąpił błąd:", error.message)
+            break;
+        }
+      })
+    } catch(error) {
+      console.log(error.message)
+    }
   }
 
   return (

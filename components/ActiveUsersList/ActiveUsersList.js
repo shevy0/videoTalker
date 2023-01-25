@@ -2,13 +2,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import ActiveUsersListItem from './ActiveUsersListItem'
 import { connect } from 'react-redux';
-import { Avatar } from '@rneui/base';
-import { getAuth } from '../../firebase';
 
 const ActiveUsersList = (props) => {
   const { activeUsers, callState } = props;
-
-  const auth = getAuth()
 
   return (
     <ScrollView>

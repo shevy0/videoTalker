@@ -1,9 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React, { useState, useEffect } from "react";
-import AntDesign from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
-import { acceptIncomingCallRequest, callToOtherUser } from "../../utils/webRTC/webRTCHandler";
-import { callStates } from "../../store/actions/callActions";
 import { connect } from "react-redux";
 import { ListItem, Avatar } from '@rneui/base';
 import { getAuth, onSnapshot, query, collection, db, orderBy } from '../../firebase';

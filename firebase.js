@@ -22,12 +22,12 @@ import {
 // import { getDoc } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBrG4b6YHzhTJpmnConkUXaSKzCUvQ6lC4",
-  authDomain: "videotalker-2c3b8.firebaseapp.com",
-  projectId: "videotalker-2c3b8",
-  storageBucket: "videotalker-2c3b8.appspot.com",
-  messagingSenderId: "27298978856",
-  appId: "1:27298978856:web:740082eca855337612291d"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
   
 const app = initializeApp(firebaseConfig);

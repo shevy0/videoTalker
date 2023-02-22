@@ -8,6 +8,8 @@ Signaling server can be found in another repo called "videoTalkerBackend".
 
 npm install -> expo run android
 
+You don't need to run a signaling server on your own because it's already deployed to heroku.
+
 # UI:
 Login and Sign Up:
 

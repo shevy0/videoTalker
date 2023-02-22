@@ -4,6 +4,7 @@ Signaling server can be found in another repo called "videoTalkerBackend".
 
 <b>Tech Stack: React Native, Redux, WebRTC, Socket.IO Client, Firebase</b>
 
+# UI:
 Login and Sign Up:
 
 <img src="https://user-images.githubusercontent.com/75830878/220458437-6d533975-60f4-4ca1-b14f-7cb5e9282a32.jpg" width="35%">

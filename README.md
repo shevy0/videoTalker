@@ -1,5 +1,6 @@
 # videoTalker
-A React Native app for videocalling and sending text messages.
+A WebRTC based React Native app for videocalling and sending text messages. It needs some refactor, but for now the main functions are working well and that was my goal.
+Signaling server can be found in another repo called "videoTalkerBackend".
 
 <b>Tech Stack: React Native, Redux, WebRTC, Socket.IO Client, Firebase</b>
 

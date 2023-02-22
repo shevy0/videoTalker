@@ -4,6 +4,10 @@ Signaling server can be found in another repo called "videoTalkerBackend".
 
 <b>Tech Stack: React Native, Redux, WebRTC, Socket.IO Client, Firebase</b>
 
+# Run
+
+npm install -> expo run android
+
 # UI:
 Login and Sign Up:
 

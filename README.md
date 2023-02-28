@@ -16,7 +16,11 @@ Run the app on android emulator
 
 Don't run the app through Expo Go app, because WebRTC native modules won't work.
 
+# Signaling server 
+
 You don't need to run a signaling server on your own because it's already deployed to heroku.
+
+...but if you want to run the server on your own you need to use ngrok and paste generated url 
 
 # UI:
 Login and Sign Up:

@@ -6,7 +6,15 @@ Signaling server can be found in another repo called "videoTalkerBackend".
 
 # Run
 
-npm install -> expo run android
+### `npm install`
+
+Install project dependencies
+
+### `expo run android`
+
+Run the app on android emulator 
+
+Don't run the app through Expo Go app, because WebRTC native modules won't work.
 
 You don't need to run a signaling server on your own because it's already deployed to heroku.
 
